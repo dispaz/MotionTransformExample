@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="example"
+            type="com.example.motiontransformexample.data.ExampleObject" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:onClick="@{clickListener}">
+        <ImageView
+            android:id="@+id/example_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/image_size"
+            android:scaleType="centerCrop"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/example_title"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_weight="3"
+                android:text="@{example.name}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+            <ImageView
+                android:id="@+id/rating_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_weight="0"
+                android:src="@drawable/ic_rating"
+                android:scaleType="fitCenter"
+                />
+            <TextView
+                android:id="@+id/example_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:text="@{Integer.toString(example.rating)}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>
