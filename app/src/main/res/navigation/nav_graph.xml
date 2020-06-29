@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/ExampleList">
+    app:startDestination="@id/exampleList">
 
     <fragment
-        android:id="@+id/ExampleList"
+        android:id="@+id/exampleList"
         android:name="com.example.motiontransformexample.ExampleListFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_example_list">
@@ -19,9 +19,8 @@
         android:name="com.example.motiontransformexample.ExampleDetailFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_example_detail">
-    <argument
-        android:name="example"
-        app:argType="com.example.motiontransformexample.data.ExampleObject"
-        />
+        <argument
+            android:name="selectedExample"
+            app:argType="com.example.motiontransformexample.data.ExampleObject"/>
     </fragment>
 </navigation>

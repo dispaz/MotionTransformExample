@@ -16,7 +16,6 @@ class ExampleRecyclerViewAdapter : ListAdapter<ExampleObject, RecyclerView.ViewH
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ExampleViewHolder(ExampleListItemBinding.inflate(
             LayoutInflater.from(parent.context), parent, false))
-
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -28,6 +27,7 @@ class ExampleRecyclerViewAdapter : ListAdapter<ExampleObject, RecyclerView.ViewH
         init {
             binding.setClickListener{
                 binding.example?.let { exampleObject ->
+                    navigateToExample(exampleObject, it)
                 }
             }
         }
@@ -41,6 +41,7 @@ class ExampleRecyclerViewAdapter : ListAdapter<ExampleObject, RecyclerView.ViewH
         fun bind(example: ExampleObject){
             binding.apply {
                 this.example = example
+                this.exampleImage.setImageBitmap(example.imageUrl)
                 executePendingBindings()
             }
         }
