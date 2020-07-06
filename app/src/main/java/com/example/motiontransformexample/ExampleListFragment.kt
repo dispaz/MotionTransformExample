@@ -27,6 +27,7 @@ class ExampleListFragment : Fragment() {
         val binding = FragmentExampleListBinding.inflate(inflater, container, false)
         binding.list = createExampleList()
         binding.listView.adapter = ExampleRecyclerViewAdapter()
+
         return binding.root
     }
 
