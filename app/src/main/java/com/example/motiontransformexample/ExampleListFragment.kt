@@ -35,7 +35,7 @@ class ExampleListFragment : Fragment() {
     }
 
     fun createExampleList() : List<ExampleObject>{
-        val am = context!!.assets
+        val am = requireContext().assets
         val files = am.list("images")
         var inputStream: InputStream? = null
 

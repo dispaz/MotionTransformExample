@@ -13,14 +13,13 @@
             type="com.example.motiontransformexample.data.ExampleObject" />
     </data>
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="15dp"
         app:cardPreventCornerOverlap="true"
         app:cardElevation="20dp"
-        android:layout_margin="5dp"
-        >
+        android:layout_margin="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,5 +64,5 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
             </LinearLayout>
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 </layout>
