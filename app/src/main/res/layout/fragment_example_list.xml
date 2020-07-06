@@ -23,8 +23,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="parent"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:listData="@{list}"
             tools:listitem="@layout/example_list_item" />
 

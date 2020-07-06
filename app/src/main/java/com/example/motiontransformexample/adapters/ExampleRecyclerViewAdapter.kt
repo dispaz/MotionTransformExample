@@ -3,7 +3,9 @@ package com.example.motiontransformexample.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.ViewCompat
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -35,13 +37,15 @@ class ExampleRecyclerViewAdapter : ListAdapter<ExampleObject, RecyclerView.ViewH
         fun navigateToExample(example: ExampleObject, view: View)
         {
             val direction = ExampleListFragmentDirections.actionExampleListToExampleDetail(example)
-            view.findNavController().navigate(direction)
+            val extras = FragmentNavigatorExtras(binding.exampleImage to "${example.id}")
+            view.findNavController().navigate(direction, extras)
         }
 
         fun bind(example: ExampleObject){
             binding.apply {
                 this.example = example
                 this.exampleImage.setImageBitmap(example.imageUrl)
+                ViewCompat.setTransitionName(binding.exampleImage, "${example.id}")
                 executePendingBindings()
             }
         }

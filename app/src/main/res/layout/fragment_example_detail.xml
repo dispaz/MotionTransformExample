@@ -2,7 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="example"
             type="com.example.motiontransformexample.data.ExampleObject" />
@@ -12,51 +14,59 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.example.motiontransformexample.MainActivity">
-        <ImageView
-            android:id="@+id/example_image"
-            android:layout_width="@dimen/detail_image_size"
-            android:layout_height="@dimen/detail_image_size"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
+            android:id="@+id/example_detail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/example_image">
-
-            <TextView
-                android:id="@+id/example_title"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_weight="3"
-                android:text="@{example.name}"
-                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/example_image"
+                android:layout_width="@dimen/detail_image_size"
+                android:layout_height="@dimen/detail_image_size"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                extAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
-                <ImageView
-                    android:id="@+id/rating_icon"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_weight="0"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_rating" />
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/example_image">
+
                 <TextView
-                    android:id="@+id/example_rating"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/example_title"
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:text="@{Integer.toString(example.rating)}"
+                    android:layout_weight="3"
+                    android:text="@{example.name}"
                     android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    extAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+                    <ImageView
+                        android:id="@+id/rating_icon"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_rating" />
+                    <TextView
+                        android:id="@+id/example_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="@{Integer.toString(example.rating)}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,7 @@
     </data>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/example_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="15dp"
@@ -22,6 +23,7 @@
         android:layout_margin="5dp">
 
         <LinearLayout
+            android:id="@+id/example_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="@{clickListener}"
@@ -31,7 +33,7 @@
                 android:id="@+id/example_image"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/image_size"
-                android:scaleType="centerCrop" />
+                android:scaleType="fitCenter" />
 
             <LinearLayout
                 android:layout_width="match_parent"

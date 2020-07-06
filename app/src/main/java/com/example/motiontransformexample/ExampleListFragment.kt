@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import com.example.motiontransformexample.adapters.ExampleRecyclerViewAdapter
 import com.example.motiontransformexample.data.ExampleObject
 import com.example.motiontransformexample.databinding.FragmentExampleListBinding
+import com.google.android.material.transition.Hold
+import com.google.android.material.transition.MaterialContainerTransform
 import java.io.InputStream
 import java.lang.Exception
 import java.util.*
@@ -27,7 +29,7 @@ class ExampleListFragment : Fragment() {
         val binding = FragmentExampleListBinding.inflate(inflater, container, false)
         binding.list = createExampleList()
         binding.listView.adapter = ExampleRecyclerViewAdapter()
-
+        configureTransitions()
         return binding.root
     }
 
@@ -56,5 +58,13 @@ class ExampleListFragment : Fragment() {
             examples.add(example)
         }
         return examples
+    }
+
+    private fun configureTransitions()
+    {
+        val transition = MaterialContainerTransform().apply {
+            duration = 1000L
+        }
+//        exitTransition = Hold()
     }
 }
